@@ -963,7 +963,7 @@ static struct ast_config *config_odbc(const char *database, const char *table, c
 	if (!obj)
 		return NULL;
 
-	ast_str_set(&sql, 0, "SELECT MAX(LENGTH(var_val)) FROM %s WHERE filename='%s'",
+	ast_str_set(&sql, 0, "SELECT MAX(LEN(var_val)) FROM %s WHERE filename='%s'",
 		table, file);
 	q.sql = ast_str_buffer(sql);
 
