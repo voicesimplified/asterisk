@@ -194,7 +194,7 @@ static struct ast_variable *realtime_switch_common(const char *table, const char
 	}
 	var = ast_load_realtime(table, ematch, rexten, "context", context, "priority", pri, SENTINEL);
 	if (!var && !ast_test_flag(&flags, OPTION_PATTERNS_DISABLED)) {
-		cfg = ast_load_realtime_multientry(table, "exten LIKE", "\\_%", "context", context, "priority", pri, SENTINEL);
+		cfg = ast_load_realtime_multientry(table, "exten LIKE", "_%", "context", context, "priority", pri, SENTINEL);
 		if (cfg) {
 			char *cat = NULL;
 
